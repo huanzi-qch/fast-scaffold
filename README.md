@@ -28,7 +28,7 @@ admin后端：等待IDE识别成springboot项目后，maven会自动下载依赖
 ```text
 原因：没有好好看文档，建议先好好看下博客介绍，博客文末“代码开源”处已经早有说明
 
-解决：admin.sql文件在resources/sql下面
+解决：admin.sql文件在admin后端项目的resources/sql下面
 ```
 3、测试账号/密码是多少？
 ```text
