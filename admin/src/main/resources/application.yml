@@ -1,0 +1,25 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: admin
+  datasource: #数据库相关
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    format:
+      date: yyyy-MM-dd HH:mm:ss
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss #jackson对响应回去的日期参数进行格式化
+    time-zone: GMT+8
+
+portal:
+  url: http://172.16.35.52:10010 #前端地址（用于跨域配置）
+
+token:
+  secret: huanzi-qch #token加密私钥（很重要，注意保密）
+  expire:
+    time: 86400000 #token有效时长，单位毫秒 24*60*60*1000
