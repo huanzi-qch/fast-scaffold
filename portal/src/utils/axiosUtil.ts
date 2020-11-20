@@ -96,7 +96,7 @@ export default class AxiosUtil{
             headers: {
                 'Content-Type': 'application/json'
             },
-            data:data
+            params:data
         }).then(response => {
             let responseAsObject = response as Object;
             succeedCallBack(new Result(responseAsObject.message,responseAsObject.status,responseAsObject.data));

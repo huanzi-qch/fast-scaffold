@@ -50,10 +50,10 @@ const testRoutes: Array<RouteConfig> = [
 ];
 
 const router = new VueRouter({
-  base:"/",
-  //history：路径直接是/test，部署到Tomcat后不能直接访问地址栏
-  //hash：路径会多一层/#/test，部署到Tomcat后能直接访问地址栏
-  mode: 'hash',
+  base:"/portal",
+  //history：路径直接是/test，文件丢到Tomcat的webapps，文件夹名 + url路径不能访问（需要把文件放在ROOT默认文件夹下面）
+  //hash：路径会多一层/#，/#/test，文件丢到Tomcat的webapps，文件夹名 + url路径能访问
+  mode: 'history',
   routes:commonRoutes.concat(testRoutes)
 });
 

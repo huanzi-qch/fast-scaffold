@@ -1,5 +1,8 @@
 server:
   port: 10086
+  servlet:
+    #应用路径，配置应用路径，可方便进行反向代理
+    context-path: /admin
 spring:
   application:
     name: admin

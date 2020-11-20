@@ -1,6 +1,6 @@
 module.exports = {
     publicPath: './',
-    outputDir: 'dist',
+    outputDir: 'portal',
     assetsDir: 'static',
     lintOnSave: true,
     productionSourceMap: false,
