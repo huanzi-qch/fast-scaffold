@@ -62,10 +62,10 @@ router.beforeEach(async(to, from, next) => {
     document.title = `${to.meta.title}`;
 
     //无令牌，跳转登录页面
-    // if (to.name !== 'Login' && !TokenUtil.getToken()){
-    //     console.log("无令牌，跳转登录页面");
-    //     next({ name: 'Login' });
-    // }
+    if (to.name !== 'Login' && !TokenUtil.getToken()){
+        console.log("无令牌，跳转登录页面");
+        next({ name: 'Login' });
+    }
 
     //跳转页面
     next();
