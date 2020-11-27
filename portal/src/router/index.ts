@@ -50,8 +50,8 @@ const testRoutes: Array<RouteConfig> = [
 ];
 
 const router = new VueRouter({
-  base:"/portal",
-  //history：路径直接是/test，文件丢到Tomcat的webapps，文件夹名 + url路径不能访问（需要把文件放在ROOT默认文件夹下面）
+  base:"/portal",//应用路径，配置应用路径，可方便进行反向代理
+  // history：路径直接是/test，文件丢到Tomcat的webapps，文件夹名 + url路径不能访问（需要把文件放在ROOT默认文件夹下面）
   //hash：路径会多一层/#，/#/test，文件丢到Tomcat的webapps，文件夹名 + url路径能访问
   mode: 'history',
   routes:commonRoutes.concat(testRoutes)
@@ -62,10 +62,10 @@ router.beforeEach(async(to, from, next) => {
     document.title = `${to.meta.title}`;
 
     //无令牌，跳转登录页面
-    if (to.name !== 'Login' && !TokenUtil.getToken()){
-        console.log("无令牌，跳转登录页面");
-        next({ name: 'Login' });
-    }
+    // if (to.name !== 'Login' && !TokenUtil.getToken()){
+    //     console.log("无令牌，跳转登录页面");
+    //     next({ name: 'Login' });
+    // }
 
     //跳转页面
     next();
