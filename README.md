@@ -36,6 +36,13 @@ admin后端：等待IDE识别成springboot项目后，maven会自动下载依赖
 
 sa/123456
 ```
+## AD广告位（长期招租，如有需要请私信）<br/> 
+[阿里云服务器（ECS）等，高性能服务器，就选阿里云](https://s.click.taobao.com/zb70Vtu)<br/> 
+[虚机+服务器，独享虚机服务 1c1g 3M带宽](https://s.click.taobao.com/q9rZYtu)<br/> 
+[云服务器，企业级云服务器特惠5折](https://s.click.taobao.com/2khzUtu)<br/> 
+[全民云计算，1核1G仅需293元/年](https://s.click.taobao.com/vLrzUtu)<br/> 
+[云服务器，低至323元/年](https://s.click.taobao.com/8PG0Vtu)<br/> 
+[云服务器，十倍性能提升,最佳性价比](https://s.click.taobao.com/L110Vtu)<br/> 
 
 ## QQ群<br/>
 有事请加群，有问题进群大家一起交流！
