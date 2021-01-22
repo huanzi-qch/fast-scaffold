@@ -12,12 +12,15 @@ import locale from 'element-ui/lib/locale/lang/zh-CN'
 // @ts-ignore
 import Avue from '@smallwei/avue';
 import '@smallwei/avue/lib/index.css';
+import echarts from 'echarts'
 
 Vue.use(Avue);
 
 Vue.use(ElementUI, { locale });
 
 Vue.config.productionTip = false;
+
+Vue.prototype.$echarts = echarts;
 
 new Vue({
   router,

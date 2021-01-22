@@ -47,7 +47,13 @@ const testRoutes: Array<RouteConfig> = [
         name: 'Info',
         meta: { title: 'demo测试' },
         component: () => import( '@/views/test/Info.vue')
-    }
+    },
+    {
+        path: '/echart',
+        name: 'EchartTest',
+        meta: { title: 'echart测试' },
+        component: () => import( '@/views/test/EchartTest.vue')
+    },
 ];
 
 const router = new VueRouter({
