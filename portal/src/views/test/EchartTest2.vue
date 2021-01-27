@@ -18,6 +18,7 @@
 <script>
     import echartUtil from "@/utils/echartUtil"
     import "@/assets/js/china.js"
+    import "@/assets/js/huanzi-qch-theme.js"
 
     var vue;
     export default {
@@ -42,10 +43,7 @@
         methods: {
             initEchart1(){
                 //初始化 echart
-                let echart = vue.$echarts.init(document.getElementById('echart1'));
-
-                //读取通用配置
-                let option = echartUtil.getEchartOption();
+                let echart = vue.$echarts.init(document.getElementById('echart1'),"huanzi-qch-theme");
 
                 //获取数据
                 let serieData = [];
@@ -73,14 +71,21 @@
                 }
 
                 //个性化配置
-                option.tooltip.formatter = function (params) {
-                    params["units"] = ["件","条"];
-                    return  echartUtil.getEchartOption().tooltip.formatter(params);
+                let option = {
+                    title: {
+                        text: '测试图表标题',
+                    },
+                    legend:{
+                        data:legendData,
+                    },
+                    xAxis:{
+                        data:xAxisData,
+                    },
+                    yAxis:{
+                        name:"单位：数量"
+                    },
+                    series:serieData,
                 };
-                option.yAxis.name = "单位：数量";
-                option.xAxis.data = xAxisData;
-                option.legend.data = legendData;
-                option.series = serieData;
 
                 //图表设置配置
                 echart.setOption(option);
@@ -89,16 +94,10 @@
                 echart.on("click", function (param) {
                     console.log(param);
                 });
-
-                //自动轮播
-                echartUtil.autoHover(echart);
             },
             initEchart2(){
                 //初始化 echart
-                let echart = vue.$echarts.init(document.getElementById('echart2'));
-
-                //读取通用配置
-                let option = echartUtil.getEchartOption();
+                let echart = vue.$echarts.init(document.getElementById('echart2'),"huanzi-qch-theme");
 
                 //获取数据
                 let serieData = [];
@@ -123,14 +122,21 @@
                 }
 
                 //个性化配置
-                option.tooltip.formatter = function (params) {
-                    params["units"] = ["件","条"];
-                    return  echartUtil.getEchartOption().tooltip.formatter(params);
+                let option = {
+                    title: {
+                        text: '测试图表标题',
+                    },
+                    legend:{
+                        data:legendData,
+                    },
+                    xAxis:{
+                        data:xAxisData,
+                    },
+                    yAxis:{
+                        name:"单位：数量"
+                    },
+                    series:serieData,
                 };
-                option.yAxis.name = "单位：数量";
-                option.xAxis.data = xAxisData;
-                option.legend.data = legendData;
-                option.series = serieData;
 
                 //图表设置配置
                 echart.setOption(option);
@@ -139,16 +145,10 @@
                 echart.on("click", function (param) {
                     console.log(param);
                 });
-
-                //自动轮播
-                echartUtil.autoHover(echart);
             },
             initEchart3(){
                 //初始化 echart
-                let echart = vue.$echarts.init(document.getElementById('echart3'));
-
-                //读取通用配置
-                let option = echartUtil.getEchartOption();
+                let echart = vue.$echarts.init(document.getElementById('echart3'),"huanzi-qch-theme");
 
                 //获取数据
                 let serieData = [];
@@ -175,14 +175,21 @@
                 }
 
                 //个性化配置
-                option.tooltip.formatter = function (params) {
-                    params["units"] = ["件","条"];
-                    return  echartUtil.getEchartOption().tooltip.formatter(params);
+                let option = {
+                    title: {
+                        text: '测试图表标题',
+                    },
+                    legend:{
+                        data:legendData,
+                    },
+                    xAxis:{
+                        data:xAxisData,
+                    },
+                    yAxis:{
+                        name:"单位：数量"
+                    },
+                    series:serieData,
                 };
-                option.yAxis.name = "单位：数量";
-                option.xAxis.data = xAxisData;
-                option.legend.data = legendData;
-                option.series = serieData;
 
                 //图表设置配置
                 echart.setOption(option);
@@ -191,16 +198,10 @@
                 echart.on("click", function (param) {
                     console.log(param);
                 });
-
-                //自动轮播
-                echartUtil.autoHover(echart);
             },
             initEchart4(){
                 //初始化 echart
-                let echart = vue.$echarts.init(document.getElementById('echart4'));
-
-                //读取通用配置
-                let option = echartUtil.getEchartOption();
+                let echart = vue.$echarts.init(document.getElementById('echart4'),"huanzi-qch-theme");
 
                 //获取数据
                 let serieData = [];
@@ -243,21 +244,28 @@
                 serieData.push(serie1);
 
                 //个性化配置
-                option.tooltip.formatter = function (params) {
-                    params["units"] = ["件","条"];
-                    return  echartUtil.getEchartOption().tooltip.formatter(params);
+                let option = {
+                    title: {
+                        text: '测试图表标题',
+                    },
+                    legend:{
+                        data:legendData,
+                    },
+                    xAxis:{
+                        data:xAxisData,
+                        axisLabel:{
+                            rotate:0
+                        }
+                    },
+                    yAxis:[
+                        {
+                            name:"单位：件"
+                        },{
+                            name:"单位：条"
+                        }
+                    ],
+                    series:serieData,
                 };
-                let yAxis = echartUtil.getEchartOption().yAxis;
-                yAxis.name = "单位：件";
-                let yAxis1 = echartUtil.getEchartOption().yAxis;
-                yAxis1.name = "单位：条";
-                yAxis1.nameTextStyle.padding = [50, 50, 0, 0];
-
-                option.yAxis = [yAxis,yAxis1];
-                option.xAxis.data = xAxisData;
-                option.xAxis.axisLabel.rotate = 0;
-                option.legend.data = legendData;
-                option.series = serieData;
 
                 //图表设置配置
                 echart.setOption(option);
@@ -266,16 +274,10 @@
                 echart.on("click", function (param) {
                     console.log(param);
                 });
-
-                //自动轮播
-                echartUtil.autoHover(echart);
             },
             initEchart5(){
                 //初始化 echart
-                let echart = vue.$echarts.init(document.getElementById('echart5'));
-
-                //读取通用配置
-                let option = echartUtil.getEchartOption();
+                let echart = vue.$echarts.init(document.getElementById('echart5'),"huanzi-qch-theme");
 
                 //获取数据
                 let serieData = [];
@@ -295,20 +297,29 @@
                 serieData.push(serie);
 
                 //个性化配置
-                option.tooltip.formatter = function (params) {
-                    params["units"] = ["件"];
-                    return  echartUtil.getEchartOption().tooltip.formatter(params);
+                let option = {
+                    title: {
+                        text: '测试图表标题',
+                    },
+                    legend:{
+                        data:legendData,
+                    },
+                    xAxis:{
+                        type:"value",
+                        axisLabel:{
+                            rotate:0
+                        }
+                    },
+                    yAxis:{
+                        type:"category",
+                        name:"单位：件",
+                        data:xAxisData,
+                        splitLine:{
+                            show:false
+                        }
+                    },
+                    series:serieData,
                 };
-
-                option.yAxis.name = "单位：件";
-                option.yAxis.type = "category";
-                option.yAxis.splitLine.show = false;
-                option.xAxis.type = "value";
-                option.xAxis.axisLabel.rotate = 0;
-
-                option.yAxis.data = xAxisData;
-                option.legend.data = legendData;
-                option.series = serieData;
 
                 //图表设置配置
                 echart.setOption(option);
@@ -317,16 +328,10 @@
                 echart.on("click", function (param) {
                     console.log(param);
                 });
-
-                //自动轮播
-                echartUtil.autoHover(echart);
             },
             initEchart6(){
                 //初始化 echart
-                let echart = vue.$echarts.init(document.getElementById('echart6'));
-
-                //读取通用配置
-                let option = echartUtil.getEchartOption();
+                let echart = vue.$echarts.init(document.getElementById('echart6'),"huanzi-qch-theme");
 
                 //获取数据
                 let serieData = [];
@@ -347,19 +352,18 @@
                 serieData.push(serie);
 
                 //个性化配置
-                option.tooltip.trigger = "item";
-                option.tooltip.formatter = function (params) {
-                    params["units"] = ["件"];
-                    return  echartUtil.getEchartOption().tooltip.formatter(params);
+                let option = {
+                    title: {
+                        text: '测试图表标题',
+                    },
+                    legend:{
+                        data:legendData,
+                        top:'center',
+                        right:0,
+                        orient:'vertical',
+                    },
+                    series:serieData,
                 };
-
-                delete option.xAxis;
-                delete option.yAxis;
-
-                option.legend.data = legendData;
-                option.legend.top='center';
-                option.legend.orient= 'vertical';
-                option.series = serieData;
 
                 //图表设置配置
                 echart.setOption(option);
@@ -368,16 +372,10 @@
                 echart.on("click", function (param) {
                     console.log(param);
                 });
-
-                //自动轮播
-                echartUtil.autoHover(echart);
             },
             initEchart7(){
                 //初始化 echart
-                let echart = vue.$echarts.init(document.getElementById('echart7'));
-
-                //读取通用配置
-                let option = echartUtil.getEchartOption();
+                let echart = vue.$echarts.init(document.getElementById('echart7'),"huanzi-qch-theme");
 
                 //获取数据
                 let serieData = [];
@@ -411,19 +409,18 @@
                 serieData.push(serie);
 
                 //个性化配置
-                option.tooltip.trigger = "item";
-                option.tooltip.formatter = function (params) {
-                    params["units"] = ["件"];
-                    return  echartUtil.getEchartOption().tooltip.formatter(params);
+                let option = {
+                    title: {
+                        text: '测试图表标题',
+                    },
+                    legend:{
+                        data:legendData,
+                        top:'center',
+                        right:0,
+                        orient:'vertical',
+                    },
+                    series:serieData,
                 };
-
-                delete option.xAxis;
-                delete option.yAxis;
-
-                option.legend.data = legendData;
-                option.legend.top='center';
-                option.legend.orient= 'vertical';
-                option.series = serieData;
 
                 //图表设置配置
                 echart.setOption(option);
@@ -432,16 +429,10 @@
                 echart.on("click", function (param) {
                     console.log(param);
                 });
-
-                //自动轮播
-                echartUtil.autoHover(echart);
             },
             initEchart8(){
                 //初始化 echart
-                let echart = vue.$echarts.init(document.getElementById('echart8'));
-
-                //读取通用配置
-                let option = echartUtil.getEchartOption();
+                let echart = vue.$echarts.init(document.getElementById('echart8'),"huanzi-qch-theme");
 
                 //获取数据
                 let serieData = [];
@@ -463,21 +454,18 @@
                     serie.data.push(item);
                 }
                 serie.name = "衣服";
-                serie.label.color = "#ff281c";
                 serieData.push(serie);
 
                 //个性化配置
-                option.tooltip.trigger = "item";
-                option.tooltip.formatter = function (params) {
-                    params["units"] = ["件"];
-                    return  echartUtil.getEchartOption().tooltip.formatter(params);
+                let option = {
+                    title: {
+                        text: '测试图表标题',
+                    },
+                    legend:{
+                        data:legendData,
+                    },
+                    series:serieData,
                 };
-
-                delete option.xAxis;
-                delete option.yAxis;
-
-                option.legend.data = legendData;
-                option.series = serieData;
 
                 //图表设置配置
                 echart.setOption(option);
@@ -486,9 +474,6 @@
                 echart.on("click", function (param) {
                     console.log(param);
                 });
-
-                //自动轮播
-                echartUtil.autoHover(echart);
             },
         },
     }
@@ -500,7 +485,7 @@
     }
     .echart{
         height: 250px;
-        background-color: #717171;
+        border: 1px solid #a7a7a7;
     }
 </style>
 

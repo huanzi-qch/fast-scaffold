@@ -8,7 +8,8 @@
       <router-link to="/test">测试页面</router-link> /
       <router-link to="/info">信息页面</router-link> /
       <router-link to="/admin">管理页面</router-link> /
-      <router-link to="/echart">Echart页面</router-link>
+      <router-link to="/echart">Echart页面</router-link> /
+      <router-link to="/echart2">Echart2页面</router-link>
 
       <br/>
       <br/>
