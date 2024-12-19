@@ -1,9 +1,9 @@
-import axios, {AxiosResponse} from 'axios'
+import axios, {AxiosResponse} from 'axios';
 import {Message} from "element-ui";
-import TokenUtil from "@/utils/tokenUtil"
+import TokenUtil from "@/utils/tokenUtil";
 import Result from "@/vo/result";
-import {Object} from  "@/utils/commonUtil"
-import router from '@/router'
+import CommonUtil, {Object} from  "@/utils/commonUtil";
+import router from '@/router';
 
 //创建axios对象
 const service = axios.create({
@@ -13,6 +13,7 @@ const service = axios.create({
 
 //设置request拦截
 service.interceptors.request.use(config => {
+        config.url = CommonUtil.getAdminUrl() + config.url;
         //设置token令牌
         if (TokenUtil.getToken()) {
           config.headers['token'] = TokenUtil.getToken()

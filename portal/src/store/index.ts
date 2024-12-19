@@ -30,7 +30,7 @@ export default new Vuex.Store({
     async setUser({commit}){
       let thid = this;
       console.log("调用getUserByToken接口获取登录用户！");
-      AxiosUtil.post(CommonUtil.getAdminUrl()+"/getUserByToken",{token:TokenUtil.getToken()},function (result) {
+      AxiosUtil.post("/getUserByToken",{token:TokenUtil.getToken()},function (result) {
         let data = result.data as Object;
         commit('SET_USER', new User(data.id,data.username));
 

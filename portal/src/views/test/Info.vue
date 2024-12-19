@@ -30,7 +30,7 @@
         }
         getUserList(){
             const vue = this;
-            AxiosUtil.post(CommonUtil.getAdminUrl()+"/tbUser/list",{},function (result) {
+            AxiosUtil.post("/tbUser/list",{},function (result) {
                 vue.userList = result.data;
             })
         }

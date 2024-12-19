@@ -36,7 +36,7 @@
       const vue = this;
       vue.fullscreenLoading = true;
 
-      AxiosUtil.post(CommonUtil.getAdminUrl()+"/login",vue.form,function (result) {
+      AxiosUtil.post("/login",vue.form,function (result) {
         if(result.status !== 200){
           vue.fullscreenLoading = false;
           vue.$message.error(result.message);
@@ -58,7 +58,7 @@
     @Emit()
     public onLogout(): void{
       const vue = this;
-      AxiosUtil.post(CommonUtil.getAdminUrl()+"/logout",{},function (result) {
+      AxiosUtil.post("/logout",{},function (result) {
         vue.$message.success('退出成功！');
         SessionStorageUtil.removeItem("loginUser");
         Store.commit('SET_USER', {});

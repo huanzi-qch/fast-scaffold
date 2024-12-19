@@ -66,7 +66,7 @@ const router = new VueRouter({
     base:"/portal",//应用路径，配置应用路径，可方便进行反向代理
     // history：路径直接是/test，文件丢到Tomcat的webapps，文件夹名 + url路径不能访问（需要把文件放在ROOT默认文件夹下面）
     //hash：路径会多一层/#，/#/test，文件丢到Tomcat的webapps，文件夹名 + url路径能访问
-    mode: 'history',
+    mode: 'hash',
     routes:commonRoutes.concat(testRoutes),
     //滚动行为
     scrollBehavior(to, from, savedPosition) {

@@ -4,6 +4,7 @@ module.exports = {
     assetsDir: 'assets',
     lintOnSave: true,
     productionSourceMap: false,
+    devtools: 'source-map', // 或者可以是 'cheap-source-map' 用于更快的构建速度，但源码映射可能不那么精确
     devServer: {
         port: '10010',
         open: false,

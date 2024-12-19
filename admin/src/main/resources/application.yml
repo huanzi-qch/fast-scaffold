@@ -20,7 +20,7 @@ spring:
     time-zone: GMT+8
 
 portal:
-  url: http://172.16.35.52:10010 #前端地址（用于跨域配置）
+  url: http://10.16.12.51:10010 #前端地址（用于跨域配置）
 
 token:
   secret: huanzi-qch #token加密私钥（很重要，注意保密）
